@@ -1,10 +1,9 @@
-//Solution usign 2 DFS 
-
+//solution : Using Dfs + Dfs
 class Solution {
 public:
     bool findBobPath(unordered_map<int, list<int>>& adj,
                      map<int, bool>& visited, int bob, int dist,
-                     map<int, int>& path) {   //T.C : O(V+E)
+                     map<int, int>& path) {   //T.C : O(n) + system Stack : O(n)
  
         path[bob] = dist;
         visited[bob] = true;
@@ -29,7 +28,7 @@ public:
     int ans = INT_MIN;
     void findAliceSum(unordered_map<int, list<int>>& adj,
                       map<int, bool>& visited, int root, int temp, int dist,
-                      map<int, int>& path, vector<int>& amount) { //T.C : O(V+E)
+                      map<int, int>& path, vector<int>& amount) {  //T.C : O(n) + system Stack : O(n)
 
         if (path.find(root) == path.end() || path[root] > dist) {
             temp += amount[root];
@@ -54,7 +53,7 @@ public:
     int mostProfitablePath(vector<vector<int>>& edges, int bob,
                            vector<int>& amount) {
 
-        unordered_map<int, list<int>> adj;  //S.C O(V+E)
+        unordered_map<int, list<int>> adj;  //S.C  //T.C : O(n) 
         // populate all child in adj list
         for (int i = 0; i < edges.size(); i++) {
 
