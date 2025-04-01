@@ -1,7 +1,6 @@
 class Solution {
 public:
       
-
       //Rec + Mem
     unordered_map<long long , long long >mp;
     long long solve(vector<vector<int>>& questions , int index ){
@@ -24,8 +23,7 @@ public:
           
           int n = questions.size();
           vector<long long> dp(n+1,0);
-          dp[n] = 0;
-           
+
          for(int index = n-1 ; index >= 0 ;index--){
          
          long long inc = questions[index][0] + (index + questions[index][1]+1 >= n ? 0 : dp[index + questions[index][1]+1] );
